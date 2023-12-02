@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
+
+    <title>Home Page</title>
+</head>
+<body>
+    <h2>This is home page</h2>
+    <h3>Home page of Bhushan Chik Baraik </h3>
+    <h4>Do you Lik It or Not </h4>
+
+    <h3>Do you want to know more about Bhushan  <a style="text-decoration:none"  href="about.html">Click Here</a></h3>
+    <!-- <h3>Do you want to know more about Bhushan  <a style="text-decoration:none"  href="parag.html">Load Parag</a></h3> -->
+
+    <button onclick="loadParagInfo()">Load Parag</button>
+    <button id="jbtn">Jquery Parag</button>
+    <div id="pt"></div>
+    
+</body>
+<!-- <script>
+    function loadParagInfo(){
+        // alert("Loading");
+        //Call to Ajax
+        var xhr= new XMLHttpRequest();
+
+        xhr.open("GET","parag.html",true)
+        xhr.onreadystatechange = function(){
+            //Call Whenever State Change
+            if(this.readyState == 4 && this.status==200){
+                //Comleteed Successfully
+                console.log(this.responseText);
+                document.getElementById("pt").innerHTML=this.responseText;
+            }
+        };
+        xhr.send();
+
+    }
+</script> -->
+
+    <script>
+        $(document).ready(function(){
+            $("jbtn").click(function(){
+                $.get("parag.html",function(data){
+                    console.log(data);
+                });
+            });
+        });
+    </script>
+    <!-- <script>
+        $(document).ready(function(){
+            alert("Hii All");
+        });
+    </script> -->
+</html>
